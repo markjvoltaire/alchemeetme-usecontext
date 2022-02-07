@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import Profile from '../../components/Profile/Profile'
+import { useUser } from '../../context/Context'
 
-const Home = ({ user }) => {
+const Home = () => {
   const [loading, setLoading] = useState(true)
+  const { user } = useUser()
+  const { name } = user
 
   useEffect(() => {
     if (user.name) {
